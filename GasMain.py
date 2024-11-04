@@ -1,51 +1,60 @@
-# THIS CLASS SHOULD BE CALLED APP.PY OR SOMETHING LIKE THAT BECAUSE IT IS THE ONE WHO
-# RUNS THE WHOLE APPLICATION
+from EnvController import EnvironmentController
+import sys
+import os
+from termcolor import colored
+
+# Configurar el entorno virtual si no está ya configurado
+env_path = os.path.join(os.getcwd(), "SoftwareGasControl")
+if not os.path.exists(env_path):
+    print("Setting up the environment for the first time...")
+    env = EnvironmentController()
+    env.setup()
+os.system("cls" if os.name == "nt" else "clear")   
+print(f"{colored('[STATUS]', 'green')} RUNNING THE MAIN APPLICATION...")
+
 
 from controller.Controller import Controller
 from view.TerminalView import TerminalView
 from PyQt5.QtWidgets import QApplication
 from view.App import App
-from EnvController import EnvironmentController
-import sys
 
 def main():
 
+    # Crear el controlador de la aplicación
     controller = None
     controller = Controller()
 
-    # Create the virtual environment
-    env_controller = EnvironmentController()
-    env_controller.setup()
-
+    # Preguntar al usuario por el modo de ejecución
     try:
         running_mode = int(input("Select the running mode (1: Terminal View, 2: GUI): "))
     except ValueError:
         print("Invalid input. Please enter a number.")
         sys.exit(1)
 
+    # Ejecutar el modo seleccionado por el usuario
     try:
         if running_mode == 1:
+            # Modo terminal
             terminal = TerminalView(controller)
             terminal.start()
-
-        else:
+        elif running_mode == 2:
+            # Modo GUI
             app = QApplication(sys.argv)
             window = App(controller)
             window.show()
             sys.exit(app.exec_())
+        else:
+            print("Invalid option. Exiting.")
+            sys.exit(1)
 
-        # When the program ends, close the Keithley devices, set the MFCs to zero, and close the data manager
+        # Apagar los dispositivos y cerrar la aplicación correctamente
         controller.shutdown()
-        
-        # Print a message to the user indicating that the program is closing
         print("Exiting...")
         sys.exit(0)
         
     except KeyboardInterrupt:
         print("Exiting...")
         sys.exit(0)
-
-
 
 if __name__ == "__main__":
     main()
