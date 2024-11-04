@@ -2,7 +2,8 @@
 
 Al seleccionar el modo de ejecución **GUI**, se despliega una aplicación desarrollada en PyQt5 que permite una gestión visual e interactiva del sistema. La interfaz está organizada en varias secciones funcionales, cada una dedicada a configurar diferentes aspectos del sistema de control y automatización.
 
-![image](https://github.com/user-attachments/assets/ec81dc08-c547-48ed-ab08-5b888ba6e488)
+![image](https://github.com/user-attachments/assets/6f023621-4c96-4785-a63b-453606cdf0d8)
+
 
 
 
@@ -20,46 +21,52 @@ En la parte inferior izquierda se encuentra la sección **Manual Mode**, destina
 - **Electrical Type**: Al hacer clic en este botón, se despliega un cuadro de diálogo (*QtDialog*) que permite al usuario especificar el tipo de configuración eléctrica para los experimentos, proporcionando una capa adicional de personalización. La funcionalidad exacta de este diálogo se describirá en secciones posteriores.
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/cf9f3ce4-f378-4d7c-8411-dcdee51eca1b" alt="image">
+    <img src="https://github.com/user-attachments/assets/9daa15d5-55a9-4fd9-921a-2969766863e8" alt="image">
 </div>
 
 <br>
+
 Al hacer clic en el botón **Electrical Type** en el **Modo Manual**, se despliega un cuadro de diálogo (*QtDialog*) que permite seleccionar el tipo de medición eléctrica que se utilizará en el sistema. Este diálogo presenta seis opciones de medición, cada una con sus propios campos configurables para adaptarse a diferentes tipos de análisis. A continuación se describe cada opción en detalle:
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/61cc2c31-5521-486f-972f-c796a5be2031" alt="image">
+</div>
+<br>
 
 - **ManualIV**: Configuración manual para mediciones de corriente en función del voltaje (I-V). Al seleccionar esta opción, el usuario puede ingresar el **voltaje** deseado y elegir la **unidad** adecuada (mV, µV, o V) según los requerimientos de precisión del experimento.
 
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/481dec47-7934-4c57-8443-820be1da1b4e" alt="image">
+    <img src="https://github.com/user-attachments/assets/84001481-efe8-4d18-a495-f58fa3792923" alt="image">
 </div>
 <br>
 
 - **ManualVI**: Configuración manual para mediciones de voltaje en función de la corriente (V-I). En esta modalidad, el usuario introduce la **intensidad** deseada y selecciona la **unidad** correspondiente (mA, µA, o A).
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/cbfc396b-17c5-43ca-aaa2-b0906fd7d617" alt="image">
+    <img src="https://github.com/user-attachments/assets/3896612a-36f3-477f-94d0-581aa330268f" alt="image">
 </div>
 <br>
 
 - **AutomaticIV**: Configuración automática para mediciones de corriente en función del voltaje (I-V) en un rango específico. Esta opción permite especificar un **voltaje inicial** y un **voltaje final**, así como la **unidad** (mV, µV, o V). Además, el usuario puede definir el número de **steps** (pasos) en los que se dividirá el rango, permitiendo una medición continua y precisa.
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/b02667af-7e7e-44cf-8118-0d8d2cfe01d1" alt="image">
+    <img src="https://github.com/user-attachments/assets/bc7d6da4-7275-45c6-a044-8db6025c448d" alt="image">
 </div>
 <br>
 
 - **AutomaticVI**: Configuración automática para mediciones de voltaje en función de la corriente (V-I) en un rango determinado. Similar a *AutomaticIV*, esta opción requiere ingresar una **intensidad inicial** y una **intensidad final**, junto con la **unidad** (mA, µA, o A) y el número de **steps** para realizar las mediciones en intervalos específicos.
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/de62543f-0d0e-422b-be15-d661c4a5dc6c" alt="image">
+    <img src="https://github.com/user-attachments/assets/8c285163-6088-41a6-b674-038eb5fd5b92" alt="image">
 </div>
 <br>
 
 - **AutomaticIT**: Configuración automática para mediciones de corriente en función del tiempo (I-T). Al elegir esta opción, el usuario introduce un **voltaje** y selecciona la **unidad** correspondiente. Este tipo de medición es útil para estudios donde la corriente varía con el tiempo bajo un voltaje constante.
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/568daeec-4ed3-42ab-8cc3-6df7720fee66" alt="image">
+    <img src="https://github.com/user-attachments/assets/036cccb4-c252-4578-a9d8-426f1c157a60" alt="image">
 </div>
 <br>
 
 - **AutomaticVT**: Configuración automática para mediciones de voltaje en función del tiempo (V-T). En esta modalidad, el usuario puede ingresar la **intensidad** y seleccionar la **unidad** (mA, µA, o A), permitiendo analizar el comportamiento del voltaje a lo largo del tiempo bajo una corriente constante.
 <div align="center">
-    <img src="https://github.com/user-attachments/assets/43f784ec-688e-44cd-ae11-4699cdec1f4f" alt="image">
+    <img src="https://github.com/user-attachments/assets/cf43288c-0400-4fc0-9308-c5be6eefb96d" alt="image">
 </div>
 <br>
 
@@ -74,6 +81,11 @@ A la derecha del Modo Manual, se encuentra la sección **Automatic Mode**, dise�
 - **Enable Automatic Mode**: Esta casilla habilita el modo automático, permitiendo que el sistema configure y ejecute automáticamente según los datos especificados.
 - **Import Excel**: Un botón que permite cargar un archivo Excel con los parámetros de control y medición previamente definidos. Este método es ideal para realizar experimentos o procesos repetitivos sin necesidad de ingresar manualmente cada valor.
 - **Sheet Name**: Un campo de entrada donde el usuario debe especificar el nombre de la hoja dentro del archivo Excel que contiene los datos a importar.
+
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/9dcbf182-81c8-4c4a-829d-258b42d94221" alt="image">
+</div>
+<br>
 
 #### Selección de Keithley
 
