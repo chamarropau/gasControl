@@ -2,7 +2,8 @@
 
 El archivo Excel está diseñado para registrar y organizar datos experimentales de manera sistemática. A continuación, se detallan las instrucciones para completar cada sección de la hoja de cálculo, asegurando una entrada de datos coherente y precisa. El archivo Excel tendrá la siguiente estructura:
 
-![image](https://github.com/user-attachments/assets/7b0e46cc-fc9d-4536-8553-0acf989aa523)
+![image](https://github.com/user-attachments/assets/40ccd412-b700-44af-a87b-91e02e289387)
+
 
 
 ## Estructura del Archivo Excel
